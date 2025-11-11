@@ -1,0 +1,12 @@
+header {
+    display: flex; /*Deixar flexivel*/
+    background-color: rgb(0, 76, 255);
+    align-items: center; /*alinhar intens, horizontal*/
+    justify-content: space-between; /*1- mexe na estrutura de direção, 2- espaçamento e entre uma ponta e outra*/
+
+}
+
+nav {
+    display: flex;
+    
+}
