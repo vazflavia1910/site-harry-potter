@@ -1,12 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ultra&display=swap');
+
+html {
+    max-width: 100vw; /*tamanho vertical do monitor*/
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background: url(assets/salao.png) no-repeat; /*contain: conter o espaço*/
+}
+
+body {
+    margin: 0; /*definir a margem*/
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+}
+
 header {
     display: flex; /*Deixar flexivel*/
-    background-color: rgb(0, 76, 255);
+    background-color: #13110E;
     align-items: center; /*alinhar intens, horizontal*/
     justify-content: space-between; /*1- mexe na estrutura de direção, 2- espaçamento e entre uma ponta e outra*/
+    padding-left: 50px; /*espaçamento dentro do elemento esquerdo*/
+    padding-right: 50px; /*espaçamento dentro do elemento direito*/
+}
 
+header .titulo-cabecalho { /*ponto serve para referenciar a class*/
+    color: #C09A42; /*muda a cor da fonte */
 }
 
 nav {
     display: flex;
-    
+    gap: 15px; /*espaçamento para elementos e só funciona com display flex*/
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /*tira toda a decoração do texto*/
+}
+
+/*aqui começa a sessão da imagem de fundo*/
+
+.imagem-de-fundo {
+    background-size: 100%;
+    width: 100%; /*largura*/
+    height: 50vw; /*altura*/
+    display: flex;
+    color: white;
+    font-size: 6vh; /*tamanho da fonte | vh: pega tamanho por pixel da tela*/
+    font-family: "Ultra", serif; /*familia da fonte*/
+    letter-spacing: 5px; /*proximidade das letras*/
+    align-items: center; /*horizontal*/
+    justify-content: center;
+}
+
+.ceu-estrelado1 {
+    background: url(assets/ceu\ azul\ 1.png);
+    background-size: 100%;
+    width: 100%; /*largura*/
+    height: auto; /*altura*/
+    display: flex;
+    color: white;
+    font-size: 6vh; /*tamanho da fonte | vh: pega tamanho por pixel da tela*/
+    letter-spacing: 5px; /*proximidade das letras*/
+    align-items: center; /*horizontal*/
+    flex-direction: column; /*coloca os elementos em um acoluna*/
+    /* justify-content: center; */
+    height: 100%;
+}
+
+.ceu-estrelado1 h2 {
+    justify-content: center;
+    text-align: center;
+    font-family: "Ultra", serif; /*familia da fonte*/
+}
+
+.ceu-estrelado1  p {
+    text-align: center;
+    font-family: 'Horizon'; /*familia da fonte*/
+    font-size: 20px;
+    width: 90%;
+    height: fit-content; /*altura, altura suficiente para caber o que tem dentro*/
+}
+
+.ceu-estrelado1 img{
+    max-width: 100%; /*largura máxima*/
+}
+
+.ceu-estrelado2 {
+    background: url(assets/ceu\ azul\ 1.png);
+    background-size: 100%;
+    width: 100%; /*largura*/
+    height: 300vh; /*altura*/
+    display: flex;
+    color: white;
+    font-size: 6vh; /*tamanho da fonte | vh: pega tamanho por pixel da tela*/
+    letter-spacing: 5px; /*proximidade das letras*/
+    align-items: center; /*horizontal*/
+    flex-direction: column; /*coloca os elementos em um acoluna*/
+    height: 100%;
+}
+
+.ceu-estrelado2 h2 {
+    justify-content: center;
+    text-align: center;
+    font-family: "Ultra", serif; /*familia da fonte*/
+}
+
+.ceu-estrelado2  p {
+text-align: center;
+    font-family: 'Horizon'; /*familia da fonte*/
+    font-size: 20px;
+    width: 90%;
+    height: fit-content; /*altura, altura suficiente para caber o que tem dentro*/
+}
+
+#imgLivros {
+    height: 60vh;
+}
+
+#imgFilme {
+    height: 60vh;
+    width: 70vh;
+    margin: auto;
+}
+
+.footer {
+    background-color: #13110E;
 }
