@@ -10,7 +10,6 @@ html {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background: url(assets/salao.png) no-repeat;
   /*contain: conter o espaço*/
 }
 
@@ -20,8 +19,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: auto;
-  background: url('../assets/ceu\ azul\ 1.png');
-
 }
 
 header {
@@ -79,6 +76,7 @@ nav a {
 }
 
 .ceu-estrelado1 {
+  background: url('../assets/ceu\ azul\ 1.png');
   background-size: 100%;
   width: 100%;
   /*largura*/
@@ -120,42 +118,6 @@ nav a {
   /*largura máxima*/
 }
 
-.ceu-estrelado2 {
-  background-size: 100%;
-  width: 100%;
-  /*largura*/
-  height: 300vh;
-  /*altura*/
-  display: flex;
-  color: white;
-  font-size: 6vh;
-  /*tamanho da fonte | vh: pega tamanho por pixel da tela*/
-  letter-spacing: 5px;
-  /*proximidade das letras*/
-  align-items: center;
-  /*horizontal*/
-  flex-direction: column;
-  /*coloca os elementos em um acoluna*/
-  height: 100%;
-}
-
-.ceu-estrelado2 h2 {
-  justify-content: center;
-  text-align: center;
-  font-family: "Ultra", serif;
-  /*familia da fonte*/
-}
-
-.ceu-estrelado2 p {
-  text-align: center;
-  font-family: 'Horizon';
-  /*familia da fonte*/
-  font-size: 20px;
-  width: 90%;
-  height: fit-content;
-  /*altura, altura suficiente para caber o que tem dentro*/
-}
-
 #imgLivros {
   height: 60vh;
 }
@@ -184,32 +146,38 @@ footer {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background: url(../assets/corredor.png);
   background-size: cover;
+  width: 100%;
+  height: 50%;
 }
 
 .login .container {
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .card {
-  width: 50%;
-  background-color: #e5e5e5;
-  border-radius: 10px;
+  background-color: #0D0022;
   display: flex;
+  width: 300px;
+  border-radius: 10px;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  color: palevioletred;
+  color: #EEE1FF;
   flex-direction: column;
-  height: fit-content;
-  padding: 20px 0;
+  padding: 20px 200px;
+}
+
+.centralizar {
+  justify-content: center;
+  display: flex;
 }
 
 .card h2 {
   margin: 0;
   font-size: 30px;
+  text-align: center;
 }
 
 .formulario {
@@ -226,10 +194,10 @@ footer {
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
   text-align: center;
   border-radius: 10px;
   margin: 0;
+  width: 500px;
 }
 
 .formulario select {
@@ -247,6 +215,7 @@ footer {
   flex-direction: column;
   justify-content: start;
   padding: 5px 0;
+  align-items: center;
 }
 
 .botao {
@@ -313,11 +282,7 @@ footer {
 }
 
 input {
-  margin-bottom: 10px;
-  border: 2px solid #32b9cd;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
+  padding: 10px 20px;
 }
 
 .btn {

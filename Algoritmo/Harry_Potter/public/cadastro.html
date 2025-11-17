@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Harry Potter</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -17,26 +17,23 @@
 
 <body onload="listar()">
   <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+  <header>
+    <div class="titulo-cabecalho"> <!-- titulo do cabeçalho do header -->
+      <h1>HARRY POTTER</h1>
     </div>
-  </div>
+
+    <nav>
+      <a href="#">HOME</a>
+
+      <a href="casas.html">CASAS</a>
+
+      <a href="quiz.html">QUIZ</a>
+
+      <a href="cadastro.html">CADASTRO</a>
+
+      <a href="login.html">LOGIN</a>
+    </nav>
+  </header>
   <!--header fim-->
 
   <div class="login">
@@ -46,52 +43,78 @@
       </div>
     </div>
     <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
+      <div class="centralizar">
+        <div class="card card-cadastro">
+          <h2>CADASTRO DOS BRUXOS</h2>
+          <div class="formulario">
+            <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
+            <div class="campo">
+              <span>Nome:</span>
+              <input id="nome_input" type="text" placeholder="Seu nome" />
+            </div>
 
-        <div id="div_erros_login"></div>
+            <div class="campo">
+              <span>Sobrenome:</span>
+              <input id="sobrenome_input" type="text" placeholder="Seu sobrenome" />
+            </div>
+
+            <div class="campo">
+              <span>Data de nascimento:</span>
+              <input id="data_input" type="text" placeholder="DD/MM/AAAA" />
+            </div>
+
+            <div class="campo">
+              <span>E-mail:</span>
+              <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            </div>
+
+            <div class="campo">
+              <span>Senha:</span>
+              <input id="senha_input" type="password" placeholder="******" />
+            </div>
+
+            <div class="campo">
+              <span>Confirme sua senha:</span>
+              <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            </div>
+
+            <div class="campo">
+              <span>Patrono</span>
+              <input id="patrono_input" type="text" placeholder="Insira seu patrono" />
+            </div>
+
+            <div class="campo">
+              <span>Selecione um animal:</span>
+              <select id="option_animal">
+                <option value="#">Selecione uma opção</option>
+                <option value="coruja">Coruja</option>
+                <option value="gato">Gato</option>
+                <option value="sapo">Sapo</option>
+              </select>
+            </div>
+
+            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+          </div>
+
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif" />
+          </div>
+
+          <div id="div_erros_login"></div>
+        </div>
       </div>
     </div>
   </div>
 
   <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
-  </div>
-  <!--footer fim-->
+  <footer>
+    <p>Projeto individual - Flávia Vaz</p>
+  </footer>
+</body>
+<!--footer fim-->
 </body>
 
 </html>
@@ -99,7 +122,7 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  var listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -132,7 +155,7 @@
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    for (var i = 0; i < listaEmpresasCadastradas.length; i++) {
       if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
         idEmpresaVincular = listaEmpresasCadastradas[i].id
         console.log("Código de ativação válido.");

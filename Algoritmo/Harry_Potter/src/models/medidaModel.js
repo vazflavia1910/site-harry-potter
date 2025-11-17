@@ -17,6 +17,8 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
 
 function buscarMedidasEmTempoReal(idAquario) {
 
+    // mudar para o select do meu banco para puxar e realizar a rota
+    // chamar a rota no front end
     var instrucaoSql = `SELECT 
         dht11_temperatura as temperatura, 
         dht11_umidade as umidade,
