@@ -118,6 +118,44 @@ nav a {
   /*largura máxima*/
 }
 
+.ceu-estrelado2 {
+  background: url('../assets/ceu\ azul\ 1.png');
+  background-size: 100%;
+  width: 100%;
+  /*largura*/
+  height: auto;
+  /*altura*/
+  display: flex;
+  color: white;
+  font-size: 6vh;
+  /*tamanho da fonte | vh: pega tamanho por pixel da tela*/
+  letter-spacing: 5px;
+  /*proximidade das letras*/
+  align-items: center;
+  /*horizontal*/
+  flex-direction: column;
+  /*coloca os elementos em um acoluna*/
+  /* justify-content: center; */
+  height: 100%;
+}
+
+.ceu-estrelado2 h2 {
+  justify-content: center;
+  text-align: center;
+  font-family: "Ultra", serif;
+  /*familia da fonte*/
+}
+
+.ceu-estrelado2 p {
+  text-align: center;
+  font-family: 'Horizon';
+  /*familia da fonte*/
+  font-size: 20px;
+  width: 90%;
+  height: fit-content;
+  /*altura, altura suficiente para caber o que tem dentro*/
+}
+
 #imgLivros {
   height: 60vh;
 }
