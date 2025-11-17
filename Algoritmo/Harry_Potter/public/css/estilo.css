@@ -305,13 +305,12 @@ footer {
 /* CASAS */
 
 .escada {
-  background: url(../assets/escadas\ que\ se\ mexem.png) no-repeat;
-  display: flex;
-  width: 800vw;
-  height: 150vh;
-  padding: 40px;
+  background: url(../assets/escada\ mexem.JPG) no-repeat;
   display: flex;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
 }
 
 /* FORMULARIO */
