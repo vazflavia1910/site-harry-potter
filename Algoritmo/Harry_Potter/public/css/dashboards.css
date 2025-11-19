@@ -116,13 +116,28 @@ body {
 }
 
 .dash {
-  width: 80%;
+  background-image: url(../assets/expresso.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90%;
   position: relative;
   top: 0;
   left: 20%;
   background-color: #161618;
   height: 100vh;
   overflow: auto;
+}
+
+.dash .bruxo h3 {
+  padding: 20px;
+  color: #EEE1FF;
+  font-size: 30px;
+  text-shadow: 2px 3px 2px #000;
+}
+
+.dash .bruxo img-pequeno {
+  display: flex;
+  gap: 40px;
 }
 
 .area-parametros-alerta {
@@ -348,7 +363,7 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid black;
   background-color: #212124;
 }
 
@@ -365,7 +380,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #C09A42;
 }
 
 .hello {
@@ -387,7 +402,7 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #C09A42;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -395,15 +410,15 @@ canvas {
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  background-color: #C09A42;
+  border: 3px solid #C09A43;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: white;
   padding: 0;
   margin: 0;
 }
@@ -418,7 +433,7 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #C09A42;
   color: white;
   border-radius: 10px;
   text-align: center;

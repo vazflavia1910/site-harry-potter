@@ -427,7 +427,7 @@ footer {
 }
 
 .grifi .diretor img {
- width: 270px;
+  width: 270px;
   height: auto;
 }
 
@@ -506,7 +506,7 @@ footer {
 }
 
 .sonserina .diretor img {
- width: 270px;
+  width: 270px;
   height: auto;
 }
 
@@ -585,7 +585,7 @@ footer {
 }
 
 .corvinal .diretor img {
- width: 270px;
+  width: 270px;
   height: auto;
 }
 
@@ -666,7 +666,7 @@ footer {
 }
 
 .lufa-lufa .diretor img {
- width: 270px;
+  width: 270px;
   height: auto;
 }
 
@@ -676,8 +676,6 @@ footer {
   font-size: 20px;
   color: #F4E91F;
 }
-
-
 
 /* FORMULARIO */
 
