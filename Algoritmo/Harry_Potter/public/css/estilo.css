@@ -387,12 +387,12 @@ footer {
 
 .grifi p {
   margin-top: 10px;
-  font-size: 16px;
-  font-family:"Barlow", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 20px;
+  text-align: center;
 }
 
-.godric-img {
+.grifi .godric-img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,23 +400,284 @@ footer {
   height: 90%;
 }
 
-.personagem-frase {
-  /* display: flex; */
+.grifi .personagem-grifinoria {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.grifi .personagem-grifinoria .personagem-frase {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.personagem-frase p {
+.grifi .personagem-frase p {
   margin-top: 10px;
-  font-size: 16px;
-  font-family:"Barlow", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 20px;
+  width: 150px;
+  padding: 60px;
 }
 
-.personagem-frase img {
+.grifi .personagem-frase img {
   width: 180px;
   height: auto;
 }
+
+.grifi .diretor img {
+ width: 270px;
+  height: auto;
+}
+
+.grifi .diretor p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  color: #FF373A;
+}
+
+/* PÁGINA SONSERINA */
+.sonserina {
+  background: url(../assets/sonserina\ fundo.jpg);
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  color: #EEE1FF;
+  margin: 0;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.sonserina h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: auto;
+  color: #60FF95;
+  font-size: 30px;
+}
+
+.sonserina p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sonserina .salazar-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.sonserina .personagem-sonserina {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sonserina .personagem-sonserina .personagem-frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sonserina .personagem-frase p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  padding: 60px;
+}
+
+.sonserina .personagem-frase img {
+  width: 180px;
+  height: auto;
+}
+
+.sonserina .diretor img {
+ width: 270px;
+  height: auto;
+}
+
+.sonserina .diretor p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  color: #60FF95;
+}
+
+/* PÁGINA CORVINAL */
+.corvinal {
+  background: url(../assets/corvinal\ fundo.jpg);
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  color: #EEE1FF;
+  margin: 0;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.corvinal h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: auto;
+  color: #0040FF;
+  font-size: 30px;
+}
+
+.corvinal p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.corvinal .rowena-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+
+.corvinal .personagem-corvinal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.corvinal .personagem-corvinal .personagem-frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.corvinal .personagem-frase p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  padding: 60px;
+}
+
+.corvinal .personagem-frase img {
+  width: 180px;
+  height: auto;
+}
+
+.corvinal .diretor img {
+ width: 270px;
+  height: auto;
+}
+
+.corvinal .diretor p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  color: #0040FF;
+}
+
+
+
+/* PÁGINA LUFA-LUFA*/
+.lufa-lufa {
+  background: url(../assets/lufa\ fundo.jpeg);
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  color: #EEE1FF;
+  margin: 0;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.lufa-lufa h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: auto;
+  color: #F4E91F;
+  font-size: 30px;
+}
+
+.lufa-lufa p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.lufa-lufa .rowena-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+
+.lufa-lufa .personagem-lufa-lufa {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lufa-lufa .personagem-lufa-lufa .personagem-frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lufa-lufa .personagem-frase p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  padding: 60px;
+}
+
+.lufa-lufa .personagem-frase img {
+  width: 180px;
+  height: auto;
+}
+
+.lufa-lufa .diretor img {
+ width: 270px;
+  height: auto;
+}
+
+.lufa-lufa .diretor p {
+  margin-top: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  color: #F4E91F;
+}
+
+
 
 /* FORMULARIO */
 
