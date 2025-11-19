@@ -210,22 +210,22 @@ footer {
 }
 
 .card {
-  background-color: #0D0022; 
+  background-color: #0D0022;
   display: flex;
   max-width: 350px;
-  width: 220px; 
-  border-radius: 30px; 
-  justify-content: center; 
-  align-items: center; 
-  color: #EEE1FF; 
-  flex-direction: column; 
+  width: 220px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  color: #EEE1FF;
+  flex-direction: column;
   padding: 10px 180px;
 }
 
 .centralizar {
   justify-content: center;
   display: flex;
-  
+
 }
 
 .card h3 {
@@ -250,7 +250,7 @@ footer {
 .formulario input {
   text-align: center;
   border-radius: 10px;
-  margin: 0;  
+  margin: 0;
   width: 370px;
 }
 
@@ -288,7 +288,7 @@ footer {
 }
 
 .botao-entrar {
- cursor: pointer;
+  cursor: pointer;
   font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
@@ -299,7 +299,7 @@ footer {
   width: 120px;
   height: 30px;
   align-self: center;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .loading-div {
@@ -319,12 +319,103 @@ footer {
 /* CASAS */
 
 .escada {
-  background: url(../assets/escada\ mexem.JPG) no-repeat;
+  background: url(../assets/escada\ move.JPG) no-repeat;
   display: flex;
   width: 100vw;
   height: 100vh;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-size: cover;
+  margin: 0;
+  color: #EEE1FF;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.escada img {
+  height: 50vh;
+  width: 40vh;
+  margin: auto;
+  display: flex;
   justify-content: center;
-  padding: 40px;
+  padding: 10px 40px;
+}
+
+.escada .casas {
+  display: flex;
+  justify-content: center;
+}
+
+.escada h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.escada h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* PÁGINA GRIFINÓRIA */
+
+.grifi {
+  background: url(../assets/grifinoria\ fundo.jpg);
+  background-size: cover;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  color: #EEE1FF;
+  margin: 0;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.grifi h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: auto;
+  color: #FF373A;
+  font-size: 30px;
+}
+
+.grifi p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family:"Barlow", sans-serif;
+  font-size: 20px;
+}
+
+.godric-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.personagem-frase {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+.personagem-frase p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family:"Barlow", sans-serif;
+  font-size: 20px;
+}
+
+.personagem-frase img {
+  width: 180px;
+  height: auto;
 }
 
 /* FORMULARIO */
