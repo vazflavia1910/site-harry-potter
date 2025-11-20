@@ -24,13 +24,11 @@
     </div>
 
     <nav>
-      <a href="index.html">HOME</a>
+      <a href="/">HOME</a>
 
       <a href="casas.html">CASAS</a>
 
-      <a href="quiz.html">QUIZ</a>
-
-      <a href="./cadastro.html">CADASTRO</a>
+      <a href="cadastro.html">CADASTRO</a>
 
       <a href="login.html">LOGIN</a>
     </nav>
@@ -149,6 +147,11 @@
       return false;
     }
 
+    else if (!email.includes('@')) {
+      alert('Verifique o seu email')
+      return false;
+    }
+
 
     // else {
     //   setInterval(sumirMensagem, 5000);
@@ -192,8 +195,7 @@
         if (resposta.ok) {
           cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
             window.location = "login.html";
