@@ -115,29 +115,54 @@ body {
   background-color: #212124;
 }
 
-.dash {
+.janela {
   background-image: url(../assets/expresso.webp);
   background-size: cover;
   background-repeat: no-repeat;
   width: 90%;
   position: relative;
-  top: 0;
   left: 20%;
   background-color: #161618;
   height: 100vh;
   overflow: auto;
 }
 
-.dash .bruxo h3 {
+.bruxo {
+  display: flex;
+  /* align-items: center; */
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kpi-img {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.bruxo .titulo {
   padding: 20px;
   color: #EEE1FF;
   font-size: 30px;
   text-shadow: 2px 3px 2px #000;
+  margin: 0%;
 }
 
-.dash .bruxo img-pequeno {
+.bruxo .img-pequeno {
   display: flex;
+  flex-direction: row;
   gap: 40px;
+  margin-top: 0;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.bruxo .img-pequeno img {
+  width: 80px;
+  height: auto;
 }
 
 .area-parametros-alerta {
@@ -234,21 +259,6 @@ body {
   font-size: 50px;
   font-weight: lighter;
   text-align: left;
-}
-
-.desc-aquario {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.desc-aquario .cor-alerta {
-  width: 30px;
-}
-
-.title-aquario {
-  width: 100%;
 }
 
 
