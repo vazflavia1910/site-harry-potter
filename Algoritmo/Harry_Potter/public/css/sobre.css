@@ -1,0 +1,32 @@
+.divContainerSobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: -30px;
+}
+
+.divSobre {
+    display: flex;
+    width: 40%;
+    margin: 5%;
+    flex-direction: column;
+    color: #611309;
+}
+
+.divTituloSobre {
+    font-size: 24px;
+}
+
+.divTextoSobre {
+    font-size: 20px;
+}
+
+#imgSobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin-top: 10px;
+}v
