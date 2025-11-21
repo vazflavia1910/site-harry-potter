@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 26px;
+}
+
 body {
     margin: 0;
     padding: 0;
