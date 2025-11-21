@@ -1,52 +1,131 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Harry Potter</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="stylesheet" href="./css/estilo.css" />
-    <link rel="icon" href="./assets/icon/favicon2.ico" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/casas.css" />
 </head>
-
-<body onload="listar()">
-    <!--header inicio-->
-    <header>
-        <div class="titulo-cabecalho"> <!-- titulo do cabeçalho do header -->
-            <h1>HARRY POTTER</h1>
+<header>
+    <div class="divHeader">
+        <div class="divEsquerda">
+            <div class="divLogo">
+                <img id="imgLogo" src="assets/Imagens/logo.png" alt="">
+            </div>
         </div>
-
-        <nav>
-            <a href="/">HOME</a>
-
-            <a href="casas.html">CASAS</a>
-
-            <a href="cadastro.html">CADASTRO</a>
-
-            <a href="login.html">LOGIN</a>
-        </nav>
-    </header>
-    <!--header fim-->
-    <div class="escada">
-        <h1>Cuidado com as escadas que se mexem !</h1>
-
-        <h3>Escolha sua sala comunal</h3>
-
-        <div class="casas">
-            <a href="grifinoria.html"><img src="./assets/brasão grifinoria.JPG"></a>
-            <a href="sonserina.html"><img src="./assets/sonserina brasão.png"></a>
-            <a href="corvinal.html"><img src="./assets/corvinal.jpg"></a>
-            <a href="lufalufa.html"><img src="./assets/brasao lufa lufa.JPG"></a>
+        <div class="divDireita">
+            <div class="divButtons" id="idHome">Home</div>
+            <div class="divButtons" id="idCasas">Casas</div>
+            <div class="divButtons" id="idSobre">Sobre</div>
+            <div class="divButtons" id="idCadastro">Cadastro</div>
+            <div class="divButtons" id="idEntrar">Entrar</div>
         </div>
+    </div>
+</header>
 
+<body>
+    <!-- Grifinoria -->
+    <div class="divContainerGrifinoria">
+        <div class="divGrifinoria">
+            <div class="divTituloGrifinoria">
+                <h1>Grifinória</h1>
+            </div>
+            <div class="divTextoGrifinoria">
+                <p>A casa Grifinória é conhecida por valorizar bruxos corajosos, ousados e determinados. Seus membros
+                    costumam agir com bravura, defender aquilo em que acreditam e proteger quem precisa. Também são
+                    reconhecidos por sua lealdade, espírito aventureiro e disposição para enfrentar desafios, mesmo
+                    quando o risco é grande. É a casa daqueles que têm o coração valente e não fogem de uma boa batalha.
+                </p>
+            </div>
+        </div>
+        <div class="divBrasao">
+            <img id="imgGrifinoria" src="./assets/Imagens/Casas/grifinoria.png" alt="Brasão de Hogwarts" />
+        </div>
+    </div>
+    <!-- Sonserina -->
+    <div class="divContainerSonserina">
+        <div class="divBrasao">
+            <img id="imgSonserina" src="./assets/Imagens/Casas/sonserina.png" alt="Brasão de Hogwarts" />
+        </div>
+        <div class="divSonserina">
+            <div class="divTituloSonserina">
+                <h1>Sonserina</h1>
+            </div>
+            <div class="divTextoSonserina">
+                <p>A casa Sonserina valoriza bruxos ambiciosos, astutos e determinados. Seus membros tendem a ser
+                    inteligentes de forma estratégica, buscando sempre alcançar seus objetivos com foco e persistência.
+                    Também prezam a autossuficiência, a liderança e a habilidade de se adaptar para vencer. Embora
+                    muitas vezes associada à pureza de sangue devido às ideias de Salazar Sonserina, a casa é, acima de
+                    tudo, conhecida por formar bruxos ambiciosos, resilientes e sagazes, capazes de enxergar
+                    oportunidades onde outros não veem.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Corvinal -->
+
+    <div class="divContainerCorvinal">
+        <div class="divCorvinal">
+            <div class="divTituloCorvinal">
+                <h1>Corvinal</h1>
+            </div>
+            <div class="divTextoCorvinal">
+                <p>A casa Corvinal valoriza bruxos inteligentes, criativos e curiosos. Seus membros prezam a sabedoria,
+                    o pensamento crítico e a busca constante por conhecimento. São conhecidos por sua mente aberta,
+                    capacidade de resolver problemas de forma original e amor pelo aprendizado. Também apreciam a
+                    individualidade e a lógica, sendo a casa daqueles que veem o mundo com profundidade e têm prazer em
+                    entender como tudo funciona.
+                </p>
+            </div>
+        </div>
+        <div class="divBrasao">
+            <img id="imgCornival" src="./assets/Imagens/Casas/cornival.png" alt="Brasão de Hogwarts" />
+        </div>
+    </div>
+    <!-- Lufa Lufa -->
+    <div class="divContainerLufaLufa">
+        <div class="divBrasao">
+            <img id="imgLufaLufa" src="./assets/Imagens/Casas/lufalufa.png" alt="Brasão de Hogwarts" />
+        </div>
+        <div class="divLufaLufa">
+            <div class="divTituloLufaLufa">
+                <h1>Lufa-Lufa</h1>
+            </div>
+            <div class="divTextoLufaLufa">
+                <p>A casa Lufa-Lufa valoriza bruxos leais, dedicados e justos. Seus membros são conhecidos por sua
+                    paciência, honestidade e vontade de trabalhar duro sem buscar reconhecimento. São bruxos que prezam
+                    a amizade, o respeito e a bondade, acolhendo todos com igualdade. A Lufa-Lufa representa aqueles que
+                    são confiáveis, gentis e sempre prontos a ajudar, tornando-a uma das casas mais unidas e
+                    equilibradas de Hogwarts.
+                </p>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>Projeto individual - Flávia Vaz</p>
+        <div class="divFooter">
+            <div class="divLogo">
+                <img id="imgLogoFooter" src="assets/Imagens/logo.png" alt="">
+            </div>
+            <div class="divAux1">
+                <div class="divButtons" id="idHome">Home</div>
+                <div class="divButtons" id="idSobre">Sobre</div>
+            </div>
+            <div class="divAux1">
+                <div class="divButtons" id="idCasas">Casas</div>
+                <div class="divAux2">
+                    <div class="divButtons" id="idCadastro">Cadastro</div>
+                    <div class="divButtons" id="idEntrar">Entrar</div>
+                </div>
+            </div>
+            <div class="divAux3">
+                <div class="divNome">Projeto Individual - Flavia Vaz</div>
+                <div class="divGitHub">Meu github!</div>
+            </div>
+
+        </div>
     </footer>
+
+</html>

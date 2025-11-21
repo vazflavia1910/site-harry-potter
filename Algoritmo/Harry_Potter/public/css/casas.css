@@ -1,0 +1,124 @@
+/* Grifinoria */
+.divContainerGrifinoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: -30px;
+}
+
+.divGrifinoria {
+    display: flex;
+    width: 40%;
+    margin: 5%;
+    flex-direction: column;
+    color: #611309;
+}
+
+.divTituloGrifinoria {
+    font-size: 24px;
+}
+
+.divTextoGrifinoria {
+    font-size: 20px;
+}
+
+/* Sonserina */
+
+.divContainerSonserina {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: -30px;
+    background-color: #1A472A;
+}
+
+.divSonserina {
+    display: flex;
+    width: 40%;
+    margin: 5%;
+    flex-direction: column;
+    color: #AAAAAA;
+}
+
+.divTituloSonserina {
+    font-size: 24px;
+}
+
+.divTextoSonserina {
+    font-size: 20px;
+}
+
+/* Corvinal */
+
+.divContainerCorvinal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: -30px;
+
+}
+
+.divCorvinal {
+    display: flex;
+    width: 40%;
+    margin: 5%;
+    flex-direction: column;
+    color: #0E1A40;
+}
+
+.divTituloCorvinal {
+    font-size: 24px;
+}
+
+.divTextoCorvinal {
+    font-size: 20px;
+}
+
+/* Lufa Lufa */
+.divContainerLufaLufa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: -30px;
+    background-color: #FFF4B2;
+}
+
+.divLufaLufa {
+    display: flex;
+    width: 40%;
+    margin: 5%;
+    flex-direction: column;
+    color: #60615C;
+}
+
+.divTituloLufaLufa {
+    font-size: 24px;
+}
+
+.divTextoLufaLufa {
+    font-size: 20px;
+}
+
+/* Brasão das casas */
+.divBrasao {
+    display: flex;
+    width: 22%;
+    justify-content: center;
+    margin: 5%;
+    flex-direction: column;
+    margin-top: 100px;
+    color: #611309;
+}
+
+#imgGrifinoria, #imgSonserina, #imgCornival, #imgLufaLufa {
+    width: 100%;
+    height: auto;
+}
