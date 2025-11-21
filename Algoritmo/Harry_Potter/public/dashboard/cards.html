@@ -5,116 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
 </head>
 
 
 <body onload="onloadEsconder()">
-    <div class="janela">
-        <div class="header-left">
-            <h1>Harry Potter</h1>
+    <div class="lateral-quiz">
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+    </div>
+    <div class="bruxo">
+        <h1>Harry Potter</h1>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Quiz</h3>
-                </a>
-            </div>
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
 
-            <div class="btn-nav">
+        <div class="btn-nav-white">
+            <h3>Quiz</h3>
+        </div>
 
+        <div class="btn-nav-white">
+            <a href="dashboard.html">
                 <h3>Dashboard</h3>
+            </a>
+        </div>
 
-            </div>
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+    </div>
 
+    <div class="janela-quiz">
+        <div class="titulo">
+            <h3>Bem vindo(a) Bruxinho(a)!</h3>
+        </div>
 
+        <canvas id="dashboard-Quiz"></canvas>
+        <div id="pontuacaoEJogo">
+            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
-            <div class="dash">
-                <div id="alerta">
+            <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+                <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                    <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                    <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+                </div>
+                <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                        <span id="spanPontuacaoFinal">***</span>
+                    </span>
+                    <span id="msgFinal" class="width-fit-content">***</span>
                 </div>
             </div>
 
-                <!-- <div class="btns-dash" id="btnAquario"> -->
-                    <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <!-- </div> -->
-                <!-- <div id="graficos">
-                </div> -->
+            <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
-            <div id="alerta">
-            </div>
-            <div class="bruxo">
-                <div class="titulo">
-                    <h3>Bem vindo(a) Bruxinho(a)!</h3>
+                <div id="infoQuestao" class="padding-8">
+                    <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                        questões.</span>
                 </div>
 
-                <canvas id="dashboard-Quiz"></canvas>
-            </div>
-            <div id="pontuacaoEJogo">
-                <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
-
-                <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-                    <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                        <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                        <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-                    </div>
-                    <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                        <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                            <span id="spanPontuacaoFinal">***</span>
-                        </span>
-                        <span id="msgFinal" class="width-fit-content">***</span>
-                    </div>
+                <div id="perguntaDaQuestaoAtual" class="padding-8">
+                    <span id="spanQuestaoExibida" class="text-bold"></span>
                 </div>
 
-                <div id="jogo" class="width-fit-content flex-colunar border-secondary">
-
-                    <div id="infoQuestao" class="padding-8">
-                        <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span
-                                id="qtdQuestoes"></span>
-                            questões.</span>
-                    </div>
-
-                    <div id="perguntaDaQuestaoAtual" class="padding-8">
-                        <span id="spanQuestaoExibida" class="text-bold"></span>
-                    </div>
-
-                    <div id="infoAlternativas" class="padding-8">
-                        <span><em>Escolha uma opção dentre as abaixo:</em></span>
-                    </div>
-
-                    <div id="opcoes" class="flex-colunar padding-8">
-                        <span>
-                            <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                            <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                            <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                            <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                            <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                        </span>
-                    </div>
-
-                    <div id="botoes" class="flex-colunar padding-8">
-                        <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                        <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                        <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                        <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
-                    </div>
-
+                <div id="infoAlternativas" class="padding-8">
+                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
                 </div>
+
+                <div id="opcoes" class="flex-colunar padding-8">
+                    <span>
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                    </span>
+                </div>
+
+                <div id="botoes" class="flex-colunar padding-8">
+                    <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -122,45 +106,107 @@
 
 </html>
 <script>
-    const listaDeQuestoes = [
+    var listaDeQuestoes = [
 
         {
-            pergunta: "Qual mês tem 30 dias?",
-            alternativaA: "Janeiro",
-            alternativaB: "Dezembro",
-            alternativaC: "Junho",
-            alternativaD: "Agosto",
-            alternativaCorreta: "alternativaC"
+            pergunta: "O que você mais valoriza?",
+            alternativaA: "Coragem",
+            alternativaB: "Ambição",
+            alternativaC: "Inteligência",
+            alternativaD: "Lealdade",
         },
 
         {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Como você age diante de um problema difícil?",
+            alternativaA: "Enfrento de frente.",
+            alternativaB: "Procuro uma forma estratégica de vencer.",
+            alternativaC: "Analiso todas as possibilidades primeiro.",
+            alternativaD: "Peço ajuda e trabalho junto com alguém.",
+            // alternativaCorreta: "alternativaD"
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Qual dessas criaturas mágicas você escolheria como companheira?",
+            alternativaA: "Hipogrifo",
+            alternativaB: "Basilisco",
+            alternativaC: "Fênix",
+            alternativaD: "Pelúcio",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Qual disciplina de Hogwarts te atrai mais?",
+            alternativaA: "Defesa Contra as Artes das Trevas",
+            alternativaB: "Poções",
+            alternativaC: "Feitiços",
+            alternativaD: "Herbologia",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "O que você faria ao achar um item mágico perigoso?",
+            alternativaA: "Destruir sem pensar duas vezes.",
+            alternativaB: "Usar, mas com cuidado.",
+            alternativaC: "Estudar antes de decidir.",
+            alternativaD: "Entregar aos professores.",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Como seus amigos te descrevem?",
+            alternativaA: "Corajoso(a)",
+            alternativaB: "Determinado(a)",
+            alternativaC: "Inteligente",
+            alternativaD: "Bondoso(a)",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Em um jogo, você…",
+            alternativaA: "Lidera o time.",
+            alternativaB: "Faz estratégias para vencer.",
+            alternativaC: "Observa e planeja tudo antes.",
+            alternativaD: "Joga limpo e ajuda todos.",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Qual seria seu pior medo?",
+            alternativaA: "Ver alguém em perigo e não conseguir ajudar.",
+            alternativaB: "Perder seu poder ou controle.",
+            alternativaC: "Falhar intelectualmente.",
+            alternativaD: "Perder amigos ou ficar sozinho(a).",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Qual objeto mágico você escolheria?",
+            alternativaA: "A espada de Gryffindor",
+            alternativaB: "A varinha das varinhas",
+            alternativaC: "O diadema de Rowena",
+            alternativaD: "A taça de Helga",
+            // alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "O que você espera de Hogwarts?",
+            alternativaA: "Aventuras e desafios",
+            alternativaB: "Oportunidade de crescer e ser o melhor",
+            alternativaC: "Conhecimento e mistérios",
+            alternativaD: "Amizades e união",
+            // alternativaCorreta: "alternativaD"
         }
 
     ]
 
     // variáveis globais    
-    let numeroDaQuestaoAtual = 0
-    let pontuacaoFinal = 0
-    let tentativaIncorreta = 0
-    let certas = 0
-    let erradas = 0
-    let quantidadeDeQuestoes = listaDeQuestoes.length
-    // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+    var numeroDaQuestaoAtual = 0
+    var pontuacaoFinal = 0
+    var tentativaIncorreta = 0
+    var certas = 0
+    var erradas = 0
+    var quantidadeDeQuestoes = listaDeQuestoes.length
+    // var isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
@@ -199,8 +245,8 @@
     function submeter() {
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
-        let hasChecked = false
-        for (let i = 0; i < options.length; i++) {
+        var hasChecked = false
+        for (var i = 0; i < options.length; i++) {
             if (options[i].checked) {
                 hasChecked = true
                 break
@@ -220,7 +266,7 @@
     }
 
     function habilitarAlternativas(trueOrFalse) {
-        let opcaoEscolhida = trueOrFalse ? false : true
+        var opcaoEscolhida = trueOrFalse ? false : true
 
         primeiraOpcao.disabled = opcaoEscolhida
         segundaOpcao.disabled = opcaoEscolhida
@@ -257,7 +303,7 @@
 
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
-        let alternativaCorreta = null // variável para armazenar a alternativa correta
+        var alternativaCorreta = null // variável para armazenar a alternativa correta
 
         options.forEach((option) => {
             if (option.value === respostaQuestaoAtual) {
@@ -297,14 +343,14 @@
 
     function desmarcarRadioButtons() {
         const options = document.getElementsByName("option");
-        for (let i = 0; i < options.length; i++) {
+        for (var i = 0; i < options.length; i++) {
             options[i].checked = false;
         }
     }
 
     function finalizarJogo() {
-        let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
+        var textoParaMensagemFinal = null
+        var classComCoresParaMensagemFinal = null
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
