@@ -10,7 +10,8 @@
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/cadastro.css" />
   <link rel="icon" href="./assets/icon/favicon2.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
@@ -19,98 +20,134 @@
 <body>
   <!--header inicio-->
   <header>
-    <div class="titulo-cabecalho"> <!-- titulo do cabeçalho do header -->
-      <h1>HARRY POTTER</h1>
+    <div class="divHeader">
+      <div class="divEsquerda">
+        <div class="divLogo">
+          <img id="imgLogo" src="assets/Imagens/logo.png" alt="">
+        </div>
+      </div>
+      <div class="divDireita">
+        <a href="index.html">
+          <div class="divButtons" id="idHome">Home</div>
+        </a>
+        <a href="casas.html">
+          <div class="divButtons" id="idCasas">Casas</div>
+        </a>
+        <a href="sobre.html">
+          <div class="divButtons" id="idSobre">Sobre</div>
+        </a>
+        <a href="cadastro.html">
+          <div class="divButtons" id="idCadastro">Cadastro</div>
+        </a>
+        <a href="login.html">
+          <div class="divButtons" id="idEntrar">Entrar</div>
+        </a>
+      </div>
     </div>
-
-    <nav>
-      <a href="/">HOME</a>
-
-      <a href="casas.html">CASAS</a>
-
-      <a href="cadastro.html">CADASTRO</a>
-
-      <a href="login.html">LOGIN</a>
-    </nav>
   </header>
   <!--header fim-->
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+  <div class="cadastro">
+    <div id="cardErro" style="display:none; color:red;"></div>
+
+    <div class="caixa-cadastro">
+
+      <div class="cadastro-titulo">
+        <h4>Bem vindo Bruxinho(a)!</h4>
       </div>
-    </div>
-    <div class="container">
-      <div class="centralizar">
-        <div class="card card-cadastro">
-          <h3>CADASTRO DOS BRUXOS</h3>
-          <div class="formulario">
-            <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-            <div class="campo">
-              <span>Nome:</span>
-              <input id="nome_input" type="text" placeholder="Seu nome" />
-            </div>
 
-            <div class="campo">
-              <span>Sobrenome:</span>
-              <input id="sobrenome_input" type="text" placeholder="Seu sobrenome" />
-            </div>
+      <div class="input-cadastro">
+        <div class="campo">
+          <span>Nome:</span>
+          <input class="input" id="nome_input" type="text" placeholder="Seu nome" />
+        </div>
 
-            <div class="campo">
-              <span>Data de nascimento:</span>
-              <input id="data_input" type="date" placeholder="DD/MM/AAAA" />
-            </div>
+        <div class="campo">
+          <span>Sobrenome:</span>
+          <input class="input" id="sobrenome_input" type="text" placeholder="Seu sobrenome" />
+        </div>
 
-            <div class="campo">
-              <span>E-mail:</span>
-              <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-            </div>
+        <div class="campo">
+          <span>Data de nascimento:</span>
+          <input class="input" id="data_input" type="date" placeholder="DD/MM/AAAA" />
+        </div>
 
-            <div class="campo">
-              <span>Senha:</span>
-              <input id="senha_input" type="password" placeholder="******" />
-            </div>
+        <div class="campo">
+          <span>E-mail:</span>
+          <input class="input" id="email_input" type="text" placeholder="meuemail@gmail.com" />
+        </div>
 
-            <div class="campo">
-              <span>Confirme sua senha:</span>
-              <input id="confirmacao_senha_input" type="password" placeholder="******" />
-            </div>
+        <div class="campo">
+          <span>Senha:</span>
+          <input class="input" id="senha_input" type="password" placeholder="******" />
+        </div>
 
-            <div class="campo">
-              <span>Patrono</span>
-              <input id="patrono_input" type="text" placeholder="Insira seu patrono" />
-            </div>
+        <div class="campo">
+          <span>Confirme sua senha:</span>
+          <input class="input" id="confirmacao_senha_input" type="password" placeholder="******" />
+        </div>
 
-            <div class="campo">
-              <span>Selecione um animal:</span>
-              <select id="option_animal">
-                <option value="#">Selecione uma opção</option>
-                <option value="coruja">Coruja</option>
-                <option value="gato">Gato</option>
-                <option value="sapo">Sapo</option>
-              </select>
-            </div>
+        <div class="campo">
+          <span>Patrono</span>
+          <input class="input" id="patrono_input" type="text" placeholder="Insira seu patrono" />
+        </div>
 
-            <button class="botao" onclick="cadastrar()">Cadastrar</button>
-          </div>
-
-          <div id="div_aguardar" class="loading-div">
-            <img src="./assets/circle-loading.gif" id="loading-gif" />
-          </div>
-
-          <div id="div_erros_login"></div>
+        <div class="campo">
+          <span>Selecione um animal:</span>
+          <select id="option_animal">
+            <option value="#">Selecione uma opção</option>
+            <option value="coruja">Coruja</option>
+            <option value="gato">Gato</option>
+            <option value="sapo">Sapo</option>
+          </select>
+        </div>
+        <div class="botao-cadastrar">
+          <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif">
         </div>
       </div>
     </div>
+
+  </div>
   </div>
 
   <!--footer inicio-->
   <footer>
-    <p>Projeto individual - Flávia Vaz</p>
+    <div class="divFooter">
+      <div class="divLogo">
+        <img id="imgLogoFooter" src="assets/Imagens/logo.png" alt="">
+      </div>
+      <div class="divAux1">
+        <a href="index.html">
+          <div class="divButtons" id="idHome">Home</div>
+        </a>
+        <a href="sobre.html">
+          <div class="divButtons" id="idSobre">Sobre</div>
+        </a>
+      </div>
+      <div class="divAux1">
+        <a href="casas.html">
+          <div class="divButtons" id="idCasas">Casas</div>
+        </a>
+        <div class="divAux2">
+          <a href="cadastro.html">
+            <div class="divButtons" id="idCadastro">Cadastro</div>
+          </a>
+          <a href="login.html">
+            <div class="divButtons" id="idEntrar">Entrar</div>
+          </a>
+        </div>
+      </div>
+      <div class="divAux3">
+        <div class="divNome">Projeto Individual - Flavia Vaz</div>
+        <a href="https://github.com/vazflavia1910" target="_blank">
+          <div class="divGitHub">Meu github!</div>
+        </a>
+      </div>
+
+    </div>
   </footer>
 </body>
 <!--footer fim-->
@@ -118,9 +155,6 @@
 </html>
 
 <script>
-
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  // var listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -140,7 +174,7 @@
     // Verificando se há algum campo em branco
     if (
       nome == "" || sobrenome == "" || dataNasc == "" || email == "" || senha == "" || confirmeSenha == "" || patrono == "" || animal == "#") {
-      // cardErro.style.display = "block";
+      cardErro.style.display = "block";
       alert('Por favor, preencha todos os campos a seguir');
 
       finalizarAguardar();
@@ -151,24 +185,6 @@
       alert('Verifique o seu email')
       return false;
     }
-
-
-    // else {
-    //   setInterval(sumirMensagem, 5000);
-    // }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    // for (var i = 0; i < listaEmpresasCadastradas.length; i++) {
-    //   if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-    //     idEmpresaVincular = listaEmpresasCadastradas[i].id
-    //     console.log("Código de ativação válido.");
-    //     break;
-    //   } else {
-    //     cardErro.style.display = "block";
-    //     mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-    //     finalizarAguardar();
-    //   }
-    // }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -186,7 +202,6 @@
         senhaServer: senha,
         patronoServer: patrono,
         animalServer: animal,
-        // idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {
@@ -195,7 +210,7 @@
         if (resposta.ok) {
           cardErro.style.display = "block";
 
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          'Cadastro realizado com sucesso! Redirecionando para tela de Login...';
 
           setTimeout(() => {
             window.location = "login.html";
@@ -214,28 +229,4 @@
 
     return false;
   }
-
-  // Listando empresas cadastradas 
-  // function listar() {
-  //   fetch("/empresas/listar", {
-  //     method: "GET",
-  //   })
-  //     .then(function (resposta) {
-  //       resposta.json().then((empresas) => {
-  //         empresas.forEach((empresa) => {
-  //           listaEmpresasCadastradas.push(empresa);
-
-  //           console.log("listaEmpresasCadastradas")
-  //           console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-  //         });
-  //       });
-  //     })
-  //     .catch(function (resposta) {
-  //       console.log(`#ERRO: ${resposta}`);
-  //     });
-  // }
-
-  // function sumirMensagem() {
-  //   cardErro.style.display = "none";
-  // }
 </script>

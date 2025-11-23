@@ -1,4 +1,5 @@
 var express = require("express");
+// caminho para acessar os arquivos
 var router = express.Router();
 
 var graficoController = require("../controllers/graficoController");

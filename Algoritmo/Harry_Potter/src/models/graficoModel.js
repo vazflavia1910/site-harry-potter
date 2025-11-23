@@ -8,8 +8,11 @@ function graficoIdade(limite_linhas) {
         WHEN TIMESTAMPDIFF(YEAR,dt_nasc, CURDATE()) <=35 THEN 'Menor que 35'
         WHEN TIMESTAMPDIFF(YEAR,dt_nasc, CURDATE()) <=45 THEN 'Menor que 45'
         ELSE 'Maior que 45'
-        END AS 'FaixaEtária'
-        FROM usuario;`;
+        END AS 'FaixaEtria'
+        COUNT(id_usuario) AS 'Valor'
+        FROM usuario;
+        GROUP BY
+        FaixaEtaria`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

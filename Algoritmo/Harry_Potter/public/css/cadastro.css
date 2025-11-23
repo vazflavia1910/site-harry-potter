@@ -1,0 +1,74 @@
+.cadastro {
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro-titulo h4 {
+    display: flex;
+    font-size: 30px;
+    color: #DAa520;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.caixa-cadastro {
+    display: flex;
+    background-color: #611309;
+    width: 440px;
+    height: 600px;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10%;
+    margin: 50px;
+}
+
+.campo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+.campo select {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 30px;
+}
+
+.campo span {
+    color: #DAa520;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.botao-cadastrar button {
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 70px;
+}
+
+.botao-cadastrar {
+    display: flex;
+    justify-content: center;
+}
+
+.loading-div img{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}

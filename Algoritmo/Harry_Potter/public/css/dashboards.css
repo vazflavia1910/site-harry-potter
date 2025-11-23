@@ -34,7 +34,11 @@ body {
   width: 20%;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #212124;
+  background-color: #611309 ;
+}
+
+.bruxo h1 {
+  color: #C09A42;
 }
 
 .bruxo .btn-nav-white {
@@ -120,9 +124,9 @@ body {
   flex-wrap: nowrap;
 }
 
-.janela .img-pequeno img {
+/* .janela .img-pequeno img {
   
-}
+} */
 
 /* CARDS */
 
