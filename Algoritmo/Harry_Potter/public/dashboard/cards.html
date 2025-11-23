@@ -4,211 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="../css/dashboards.css">
+    <title>Exemplo - Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body onload="onloadEsconder()">
-    <div class="lateral-quiz">
+    <div id="pontuacaoEJogo">
+        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
-    </div>
-    <div class="bruxo">
-        <h1>Harry Potter</h1>
-
-        <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        <!-- PONTUAÇÃO -->
+        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+            </div>
+            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                    <span id="spanPontuacaoFinal">***</span>
+                </span>
+                <span id="msgFinal" class="width-fit-content">***</span>
+            </div>
         </div>
 
-        <div class="btn-nav-white">
-            <h3>Quiz</h3>
-        </div>
+        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
-        <div class="btn-nav-white">
-            <a href="dashboard.html">
-                <h3>Dashboard</h3>
-            </a>
-        </div>
-
-        <div class="btn-logout" onclick="limparSessao()">
-            <h3>Sair</h3>
-        </div>
-
-    </div>
-
-    <div class="janela-quiz">
-        <div class="titulo">
-            <h3>Bem vindo(a) Bruxinho(a)!</h3>
-        </div>
-
-        <canvas id="dashboard-Quiz"></canvas>
-        <div id="pontuacaoEJogo">
-            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
-
-            <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-                <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                    <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                    <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-                </div>
-                <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                        <span id="spanPontuacaoFinal">***</span>
-                    </span>
-                    <span id="msgFinal" class="width-fit-content">***</span>
-                </div>
+            <!-- QUESTÕES -->
+            <div id="infoQuestao" class="padding-8">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                    questões.</span>
             </div>
 
-            <div id="jogo" class="width-fit-content flex-colunar border-secondary">
-
-                <div id="infoQuestao" class="padding-8">
-                    <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
-                        questões.</span>
-                </div>
-
-                <div id="perguntaDaQuestaoAtual" class="padding-8">
-                    <span id="spanQuestaoExibida" class="text-bold"></span>
-                </div>
-
-                <div id="infoAlternativas" class="padding-8">
-                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
-                </div>
-
-                <div id="opcoes" class="flex-colunar padding-8">
-                    <span>
-                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                    </span>
-                </div>
-
-                <div id="botoes" class="flex-colunar padding-8">
-                    <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                    <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
-                </div>
-
+            <!-- PERGUNTA ATUAL -->
+            <div id="perguntaDaQuestaoAtual" class="padding-8">
+                <span id="spanQuestaoExibida" class="text-bold"></span>
             </div>
+
+            <!-- ALTERNATIVAS -->
+            <div id="infoAlternativas" class="padding-8">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+
+            <!-- OPÇÕES PARA ESCOLHER  -->
+            <div id="opcoes" class="flex-colunar padding-8">
+                <!-- PRIMEIRA OPÇÃO  -->
+                <span>
+                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                </span>
+                <!-- SEGUNDA OPÇÃO  -->
+                <span>
+                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                </span>
+                <!-- TERCEIRA OPÇÃO  -->
+                <span>
+                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                </span>
+                <!-- QUARTA OPÇÃO  -->
+                <span>
+                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                </span>
+            </div>
+
+            <!-- BOTÕES  -->
+            <div id="botoes" class="flex-colunar padding-8">
+                <!-- SUBMETER A RESPOSTA  -->
+                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                <!-- AVANÇAR  -->
+                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                <!-- OUTRA TENTATIVA  -->
+                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+            </div>
+
         </div>
     </div>
 </body>
 
 </html>
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    var listaDeQuestoes = [
+    const listaFeitcos = [
 
         {
-            pergunta: "O que você mais valoriza?",
-            alternativaA: "Coragem",
-            alternativaB: "Ambição",
-            alternativaC: "Inteligência",
-            alternativaD: "Lealdade",
+            pergunta: "O que o feitiço Expelliarmus faz?",
+            alternativaA: "Faz objetos flutuarem",
+            alternativaB: "Desarma o oponente",
+            alternativaC: "Produz luz na ponta da varinha",
+            alternativaD: "Atordoa quem é atingido",
+            alternativaCorreta: "alternativaB"
         },
 
         {
-            pergunta: "Como você age diante de um problema difícil?",
-            alternativaA: "Enfrento de frente.",
-            alternativaB: "Procuro uma forma estratégica de vencer.",
-            alternativaC: "Analiso todas as possibilidades primeiro.",
-            alternativaD: "Peço ajuda e trabalho junto com alguém.",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Lumos faz?",
+            alternativaA: "Apaga todas as luzes",
+            alternativaB: "Cria uma explosão de luz",
+            alternativaC: "Ilumina a ponta da varinha",
+            alternativaD: "Envia uma mensagem luminosa",
+            alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Qual dessas criaturas mágicas você escolheria como companheira?",
-            alternativaA: "Hipogrifo",
-            alternativaB: "Basilisco",
-            alternativaC: "Fênix",
-            alternativaD: "Pelúcio",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Petrificus Totalus faz?",
+            alternativaA: "Paralisa totalmente o corpo de alguém",
+            alternativaB: "Transforma o alvo em pedra",
+            alternativaC: "Causa confusão mental",
+            alternativaD: "Torna alguém invisível",
+            alternativaCorreta: "alternativaA"
         },
 
         {
-            pergunta: "Qual disciplina de Hogwarts te atrai mais?",
-            alternativaA: "Defesa Contra as Artes das Trevas",
-            alternativaB: "Poções",
-            alternativaC: "Feitiços",
-            alternativaD: "Herbologia",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Wingardium Leviosa faz?",
+            alternativaA: "Cria uma onda de vento",
+            alternativaB: "Faz objetos levitarem",
+            alternativaC: "Empurra o alvo para longe",
+            alternativaD: "Cria asas no objeto tocado",
+            alternativaCorreta: "alternativaB"
         },
 
         {
-            pergunta: "O que você faria ao achar um item mágico perigoso?",
-            alternativaA: "Destruir sem pensar duas vezes.",
-            alternativaB: "Usar, mas com cuidado.",
-            alternativaC: "Estudar antes de decidir.",
-            alternativaD: "Entregar aos professores.",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Accio faz?",
+            alternativaA: "Explode objetos",
+            alternativaB: "Atrai um objeto até o bruxo",
+            alternativaC: "Duplica objetos",
+            alternativaD: "Teletransporta o bruxo",
+            alternativaCorreta: "alternativaB"
         },
 
         {
-            pergunta: "Como seus amigos te descrevem?",
-            alternativaA: "Corajoso(a)",
-            alternativaB: "Determinado(a)",
-            alternativaC: "Inteligente",
-            alternativaD: "Bondoso(a)",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Stupefy faz?",
+            alternativaA: "Paralisa o alvo",
+            alternativaB: "Adormece o alvo",
+            alternativaC: "Atordoa o alvo",
+            alternativaD: "Faz esquecer memórias",
+            alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Em um jogo, você…",
-            alternativaA: "Lidera o time.",
-            alternativaB: "Faz estratégias para vencer.",
-            alternativaC: "Observa e planeja tudo antes.",
-            alternativaD: "Joga limpo e ajuda todos.",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Alohomora faz?",
+            alternativaA: "Tranca portas",
+            alternativaB: "Revela passagens secretas",
+            alternativaC: "Quebra fechaduras",
+            alternativaD: "Abre portas trancadas",
+            alternativaCorreta: "alternativaD"
         },
 
         {
-            pergunta: "Qual seria seu pior medo?",
-            alternativaA: "Ver alguém em perigo e não conseguir ajudar.",
-            alternativaB: "Perder seu poder ou controle.",
-            alternativaC: "Falhar intelectualmente.",
-            alternativaD: "Perder amigos ou ficar sozinho(a).",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Riddikulus faz?",
+            alternativaA: "Expulsa Dementadores",
+            alternativaB: "Destrói objetos",
+            alternativaC: "Transforma um bicho-papão em algo engraçado",
+            alternativaD: "Convoca proteção animal",
+            alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Qual objeto mágico você escolheria?",
-            alternativaA: "A espada de Gryffindor",
-            alternativaB: "A varinha das varinhas",
-            alternativaC: "O diadema de Rowena",
-            alternativaD: "A taça de Helga",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Expecto Patronum faz?",
+            alternativaA: "Cura ferimentos",
+            alternativaB: "Protege contra maldições imperdoáveis",
+            alternativaC: "Repõe energia mágica",
+            alternativaD: "Cria um Patrono para afastar Dementadores",
+            alternativaCorreta: "alternativaD"
         },
 
         {
-            pergunta: "O que você espera de Hogwarts?",
-            alternativaA: "Aventuras e desafios",
-            alternativaB: "Oportunidade de crescer e ser o melhor",
-            alternativaC: "Conhecimento e mistérios",
-            alternativaD: "Amizades e união",
-            // alternativaCorreta: "alternativaD"
+            pergunta: "O que o feitiço Obliviate faz?",
+            alternativaA: "Apaga memórias",
+            alternativaB: "Cria ilusões",
+            alternativaC: "Torna o alvo confuso",
+            alternativaD: "Revela segredos ocultos",
+            alternativaCorreta: "alternativaA"
         }
 
     ]
 
     // variáveis globais    
-    var numeroDaQuestaoAtual = 0
-    var pontuacaoFinal = 0
-    var tentativaIncorreta = 0
-    var certas = 0
-    var erradas = 0
-    var quantidadeDeQuestoes = listaDeQuestoes.length
-    // var isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+    let numeroDaQuestaoAtual = 0 
+    let pontuacaoFinal = 0 // respostas corretas acertou
+    let tentativaIncorreta = 0 // contador para respostas erradas
+    let certas = 0 // contador de acerto
+    let erradas = 0 // contador de erros
+    let quantidadeDeQuestoes = listaFeitcos.length // total de perguntas
 
+    // esconde o quiz ate o usuário apertar o botão
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
         document.getElementById('jogo').style.display = "none"
@@ -231,7 +211,7 @@
 
     function preencherHTMLcomQuestaoAtual(index) {
         habilitarAlternativas(true)
-        const questaoAtual = listaDeQuestoes[index]
+        const questaoAtual = listaFeitcos[index]
         numeroDaQuestaoAtual = index
         console.log("questaoAtual")
         console.log(questaoAtual)
@@ -246,8 +226,8 @@
     function submeter() {
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
-        var hasChecked = false
-        for (var i = 0; i < options.length; i++) {
+        let hasChecked = false
+        for (let i = 0; i < options.length; i++) {
             if (options[i].checked) {
                 hasChecked = true
                 break
@@ -267,7 +247,7 @@
     }
 
     function habilitarAlternativas(trueOrFalse) {
-        var opcaoEscolhida = trueOrFalse ? false : true
+        let opcaoEscolhida = trueOrFalse ? false : true
 
         primeiraOpcao.disabled = opcaoEscolhida
         segundaOpcao.disabled = opcaoEscolhida
@@ -299,12 +279,12 @@
     }
 
     function checarResposta() {
-        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
+        const questaoAtual = listaFeitcos[numeroDaQuestaoAtual] // questão atual 
         const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
 
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
-        var alternativaCorreta = null // variável para armazenar a alternativa correta
+        let alternativaCorreta = null // variável para armazenar a alternativa correta
 
         options.forEach((option) => {
             if (option.value === respostaQuestaoAtual) {
@@ -344,14 +324,14 @@
 
     function desmarcarRadioButtons() {
         const options = document.getElementsByName("option");
-        for (var i = 0; i < options.length; i++) {
+        for (let i = 0; i < options.length; i++) {
             options[i].checked = false;
         }
     }
 
     function finalizarJogo() {
-        var textoParaMensagemFinal = null
-        var classComCoresParaMensagemFinal = null
+        let textoParaMensagemFinal = null
+        let classComCoresParaMensagemFinal = null
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
@@ -367,14 +347,14 @@
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
-        document.getElementById('jogo').classList.add("text-new-gray")
+        document.getElementById('jogo').classList.add("text-new-gray") 
 
         btnProx.disabled = true
         btnSubmeter.disabled = true

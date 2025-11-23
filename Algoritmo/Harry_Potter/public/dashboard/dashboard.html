@@ -71,6 +71,10 @@
             </div>
         </div>
 
+        <div class="grafico-idade">
+            <canvas id="myChart"></canvas>
+  </div>
+
         <div id="alerta">
         </div>
     </div>
@@ -118,63 +122,60 @@
 
         console.log('iniciando plotagem do gráfico...');
 
-        const dadosReais = resposta;  
+        const dadosReais = resposta;
         // todos os dados que eu peguei do banco
 
-        var labels = [];
+        var labels = []; 
         // vetor da faixa etária
         var valores = [];
         // numero de pessoas que teve essa idade
 
-        for ()
+        // [ [] = array 
+        //   { "faixaEtaria": "Menor que 25", "valor": 120 }, {} = json
+        //   { "faixaEtaria": "26 a 35 anos", "valor": 85 },
+        //   { "faixaEtaria": "36 a 45 anos", "valor": 55 },
+        //   { "faixaEtaria": "Maior que 45", "valor": 30 }
+        // ]
+
+        for (var i = 0; i < dadosReais.length; i++) {
+            // 
+            var dadoAtual = dadosReais[i];
+            labels.push(dadoAtual.FaixaEtaria);
+            valores.push(dadoAtual.Valor);
+            // pegar os valores dos dados reais
+        }
 
         var dados = {
             labels: labels,
             datasets: [{
-                label: 'Umidade',
-                data: [],
-                fill: false,
+                label: 'Total de Usuário',
+                data: valores,
+                backgroundColor: [
+                    '#36A2EB',
+                    'FF6384',
+                    '#FFCD56',
+                    '#4BC0C0'
+                ],
+                fill: true,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
-            },
-            {
-                label: 'Temperatura',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }]
+            }] 
         };
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
 
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'bar',
             data: dados,
         };
 
         // Adicionando gráfico criado em div na tela
+        // procura o elemento
         var myChart = new Chart(
-            document.getElementById(`myChartCanvas${idAquario}`),
+            document.getElementById(`myChart`),
             config
         );
     }
