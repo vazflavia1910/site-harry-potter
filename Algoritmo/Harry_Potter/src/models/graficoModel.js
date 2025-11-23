@@ -25,3 +25,20 @@ module.exports = {
     graficoIdade
 
 }
+
+function graficoAnimal(limite_linhas) {
+
+    var instrucaoSql = `SELECT u.nome AS 'Nome',
+		r.dt_realizado AS 'Data Feito',
+        r.resultado AS 'Resultado do Quiz'
+        FROM usuario AS u JOIN resultado AS r
+        ON u.id_usuario = r.fk_usuario;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+module.exports = {
+    graficoAnimal
+
+}

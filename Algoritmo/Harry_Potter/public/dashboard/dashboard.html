@@ -10,7 +10,6 @@
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -73,7 +72,7 @@
 
         <div class="grafico-idade">
             <canvas id="myChart"></canvas>
-  </div>
+        </div>
 
         <div id="alerta">
         </div>
@@ -100,7 +99,26 @@
         //     clearTimeout(proximaAtualizacao);
         // }
 
+        // distribuição de idade
         fetch(`/grafico/graficoIdade`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+            // animais para hogwarts
+        fetch(`/grafico/graficoAnimal`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -125,7 +143,7 @@
         const dadosReais = resposta;
         // todos os dados que eu peguei do banco
 
-        var labels = []; 
+        var labels = [];
         // vetor da faixa etária
         var valores = [];
         // numero de pessoas que teve essa idade
@@ -159,7 +177,7 @@
                 fill: true,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
-            }] 
+            }]
         };
 
         console.log('----------------------------------------------')

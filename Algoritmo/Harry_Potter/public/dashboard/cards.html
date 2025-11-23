@@ -5,87 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo - Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="../js/sessao.js"></script>
+
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
 </head>
 
 
 <body onload="onloadEsconder()">
-    <div id="pontuacaoEJogo">
-        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+    <div class="bruxo">
+        <h1>Harry Potter</h1>
 
-        <!-- PONTUAÇÃO -->
-        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-            </div>
-            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                    <span id="spanPontuacaoFinal">***</span>
-                </span>
-                <span id="msgFinal" class="width-fit-content">***</span>
-            </div>
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
 
-        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+        <div class="btn-nav-white">
+            <h3>Quiz</h3>
+        </div>
 
-            <!-- QUESTÕES -->
-            <div id="infoQuestao" class="padding-8">
-                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
-                    questões.</span>
+        <div class="btn-nav-white">
+            <a href="./dashboard.html">
+                <h3>Dashboard</h3>
+            </a>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+
+    </div>
+
+    <div class="quiz-feitico">
+        <div class="container">
+            <div id="pontuacaoEJogo">
+                <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+
+                <!-- PONTUAÇÃO -->
+                <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+                    <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                        <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                        <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+                    </div>
+                    <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                        <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                            <span id="spanPontuacaoFinal">***</span>
+                        </span>
+                        <span id="msgFinal" class="width-fit-content">***</span>
+                    </div>
+                </div>
+
+                <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+                    <!-- QUESTÕES -->
+                    <div id="infoQuestao" class="padding-8">
+                        <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span
+                                id="qtdQuestoes"></span>
+                            questões.</span>
+                    </div>
+
+                    <!-- PERGUNTA ATUAL -->
+                    <div id="perguntaDaQuestaoAtual" class="padding-8">
+                        <span id="spanQuestaoExibida" class="text-bold"></span>
+                    </div>
+
+                    <!-- ALTERNATIVAS -->
+                    <div id="infoAlternativas" class="padding-8">
+                        <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                    </div>
+
+                    <!-- OPÇÕES PARA ESCOLHER  -->
+                    <div id="opcoes" class="flex-colunar padding-8">
+                        <!-- PRIMEIRA OPÇÃO  -->
+                        <span>
+                            <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                            <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                        </span>
+                        <!-- SEGUNDA OPÇÃO  -->
+                        <span>
+                            <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                            <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                        </span>
+                        <!-- TERCEIRA OPÇÃO  -->
+                        <span>
+                            <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                            <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                        </span>
+                        <!-- QUARTA OPÇÃO  -->
+                        <span>
+                            <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                            <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                        </span>
+                    </div>
+
+                    <!-- BOTÕES  -->
+                    <div id="botoes" class="botoes-quiz">
+                        <!-- SUBMETER A RESPOSTA  -->
+                        <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                        <!-- AVANÇAR  -->
+                        <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                        <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                        <!-- OUTRA TENTATIVA  -->
+                        <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                    </div>
+
+                </div>
             </div>
-
-            <!-- PERGUNTA ATUAL -->
-            <div id="perguntaDaQuestaoAtual" class="padding-8">
-                <span id="spanQuestaoExibida" class="text-bold"></span>
-            </div>
-
-            <!-- ALTERNATIVAS -->
-            <div id="infoAlternativas" class="padding-8">
-                <span><em>Escolha uma opção dentre as abaixo:</em></span>
-            </div>
-
-            <!-- OPÇÕES PARA ESCOLHER  -->
-            <div id="opcoes" class="flex-colunar padding-8">
-                <!-- PRIMEIRA OPÇÃO  -->
-                <span>
-                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                </span>
-                <!-- SEGUNDA OPÇÃO  -->
-                <span>
-                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                </span>
-                <!-- TERCEIRA OPÇÃO  -->
-                <span>
-                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                </span>
-                <!-- QUARTA OPÇÃO  -->
-                <span>
-                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                </span>
-            </div>
-
-            <!-- BOTÕES  -->
-            <div id="botoes" class="flex-colunar padding-8">
-                <!-- SUBMETER A RESPOSTA  -->
-                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                <!-- AVANÇAR  -->
-                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                <!-- OUTRA TENTATIVA  -->
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
-            </div>
-
         </div>
     </div>
 </body>
 
 </html>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     const listaFeitcos = [
 
         {
@@ -95,24 +128,6 @@
             alternativaC: "Produz luz na ponta da varinha",
             alternativaD: "Atordoa quem é atingido",
             alternativaCorreta: "alternativaB"
-        },
-
-        {
-            pergunta: "O que o feitiço Lumos faz?",
-            alternativaA: "Apaga todas as luzes",
-            alternativaB: "Cria uma explosão de luz",
-            alternativaC: "Ilumina a ponta da varinha",
-            alternativaD: "Envia uma mensagem luminosa",
-            alternativaCorreta: "alternativaC"
-        },
-
-        {
-            pergunta: "O que o feitiço Petrificus Totalus faz?",
-            alternativaA: "Paralisa totalmente o corpo de alguém",
-            alternativaB: "Transforma o alvo em pedra",
-            alternativaC: "Causa confusão mental",
-            alternativaD: "Torna alguém invisível",
-            alternativaCorreta: "alternativaA"
         },
 
         {
@@ -131,24 +146,6 @@
             alternativaC: "Duplica objetos",
             alternativaD: "Teletransporta o bruxo",
             alternativaCorreta: "alternativaB"
-        },
-
-        {
-            pergunta: "O que o feitiço Stupefy faz?",
-            alternativaA: "Paralisa o alvo",
-            alternativaB: "Adormece o alvo",
-            alternativaC: "Atordoa o alvo",
-            alternativaD: "Faz esquecer memórias",
-            alternativaCorreta: "alternativaC"
-        },
-
-        {
-            pergunta: "O que o feitiço Alohomora faz?",
-            alternativaA: "Tranca portas",
-            alternativaB: "Revela passagens secretas",
-            alternativaC: "Quebra fechaduras",
-            alternativaD: "Abre portas trancadas",
-            alternativaCorreta: "alternativaD"
         },
 
         {
@@ -181,7 +178,7 @@
     ]
 
     // variáveis globais    
-    let numeroDaQuestaoAtual = 0 
+    let numeroDaQuestaoAtual = 0
     let pontuacaoFinal = 0 // respostas corretas acertou
     let tentativaIncorreta = 0 // contador para respostas erradas
     let certas = 0 // contador de acerto
@@ -212,17 +209,14 @@
     function preencherHTMLcomQuestaoAtual(index) {
         habilitarAlternativas(true)
         const questaoAtual = listaFeitcos[index]
-        numeroDaQuestaoAtual = index
-        console.log("questaoAtual")
-        console.log(questaoAtual)
-        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
-        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
-        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
-        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
-        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
-        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
-    }
 
+        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1
+        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta
+        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA
+        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB
+        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC
+        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD
+    }
     function submeter() {
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
@@ -262,14 +256,12 @@
 
         desmarcarRadioButtons()
 
-        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
+        if (numeroDaQuestaoAtual < quantidadeDeQuestoes) {
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
         } else {
             finalizarJogo()
         }
+
         limparCoresBackgroundOpcoes()
     }
 
@@ -335,11 +327,11 @@
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
+            textoParaMensagemFinal = "Parece que você não assistiu os filmes bruxinho..."
             classComCoresParaMensagemFinal = "text-danger-with-bg"
         }
         else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
+            textoParaMensagemFinal = "Pode melhorar na próxima bruxinho!"
             classComCoresParaMensagemFinal = "text-warning-with-bg"
         }
         else if (porcentagemFinalDeAcertos >= 0.9) {
@@ -347,19 +339,31 @@
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões, um verdadeiro bruxinho."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
-        document.getElementById('jogo').classList.add("text-new-gray") 
+        document.getElementById('jogo').classList.add("text-new-gray")
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
+        fetch(`/quizFeitcos`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }, 
+            // corpo
+            body: JSON.stringify({
+                porcentagemFinalDeAcertosServer: porcentagemFinalDeAcertos,
+                pontuacaoFinalServer: pontuacaoFinal,
+                id_usuarioServer: sessionStorage.ID_USUARIO
+            })
+        })     
     }
 </script>
