@@ -8,8 +8,8 @@ router.get("/graficoIdade", function (req, res) {
     graficoController.graficoIdade(req, res);
 });
 
-router.get("/graficoAnimal", function (req, res) {
-    graficoController.graficoAnimal(req, res);
-});
+router.get('/buscarAnimais', function (req, res) {
+    graficoController.buscarAnimais(req, res);
+})
 
 module.exports = router;

@@ -1,14 +1,14 @@
 var quizModel = require("../models/quizModel");
 
-function quizFeitcos(req, res) {
+function quizFeiticos(req, res) {
 
-    var porcentagem = req.body.porcentagemFinalDeAcertosServer;
+    // var porcentagem = req.body.porcentagemFinalDeAcertosServer;
     var pontuacao = req.body.pontuacaoFinalServer;
     var idusuario = req.body.id_usuarioServer;
     
     console.log(`Tentando salvar resultado do quiz...`);
 
-    quizModel.quizFeitcos(porcentagem, pontuacao, idusuario)
+    quizModel.quizFeiticos(idusuario, pontuacao)
         .then(
             function (resultado) {
                     res.status(201).send({ message: "Resultado do quiz registrado com sucesso!" });
@@ -21,6 +21,6 @@ function quizFeitcos(req, res) {
 }
 
 module.exports = {
-    quizFeitcos,
+    quizFeiticos
 
 }

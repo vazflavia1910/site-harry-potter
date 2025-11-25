@@ -1,10 +1,10 @@
 var database = require("../database/config");
 
-function quizFeitcos(porcentagem, pontuacao, idusuario) {
+function quizFeiticos(idusuario, pontuacao) {
     
     var instrucaoSql = `
-        INSERT INTO resultado (fk_usuario, pontuacao, porcentagem_acertos, dt_realizado) 
-        VALUES (${idusuario}, ${pontuacao}, ${porcentagem}, NOW());
+        INSERT INTO resultado (fk_usuario, fk_quiz, resultado) 
+        VALUES (${idusuario}, 1, ${pontuacao});
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -12,5 +12,5 @@ function quizFeitcos(porcentagem, pontuacao, idusuario) {
 }
 
 module.exports = {
-    quizFeitcos,
+    quizFeiticos
 }

@@ -22,9 +22,6 @@ header {
     background-color: #611309;
     color: #DAA520;
     height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     font-size: 40px;
     margin: 0;
     border-bottom: #DAa520 solid 3px;
@@ -34,11 +31,12 @@ header {
     background-color: #611309;
     color: #DAa520;
     display: flex;
-    align-items: row;
+    align-items: center;
     justify-content: space-between;
-    gap: 950px;
+    padding: 0px 20px;
+    /* gap: 950px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
 }
 
 .divEdquerda {
@@ -51,7 +49,6 @@ header {
 
 .divDireita {
     display: flex;
-    font-size: 20px;
     align-items: center;
     font-size: 25px;
     gap: 20px;

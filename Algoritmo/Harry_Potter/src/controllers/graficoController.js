@@ -17,16 +17,9 @@ function graficoIdade(req, res) {
     });
 }
 
-module.exports = {
-    graficoIdade,
 
-}
-
-function graficoAnimal(req, res) {
-
-    console.log(`Recuperando as ultimas medidas`);
-
-    graficoModel.graficoAnimal().then(function (resultado) {
+function buscarAnimais(req, res) {
+    graficoModel.buscarAnimais().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -39,7 +32,8 @@ function graficoAnimal(req, res) {
     });
 }
 
-module.exports = {
-    graficoAnimal,
 
+module.exports = {
+    graficoIdade,
+    buscarAnimais
 }

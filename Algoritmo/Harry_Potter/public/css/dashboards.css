@@ -22,19 +22,19 @@ body {
 
 /* DASHBOARD */
 .bruxo {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  gap: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 20%;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #611309 ;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #611309;
 }
 
 .bruxo h1 {
@@ -90,13 +90,17 @@ body {
   cursor: pointer;
 }
 
+.principal-caixa {
+    border: 1px solid red;
+    display: flex;
+}
+
 .janela {
   background-image: url(../assets/expresso.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 90%;
+  width: 100%;
   position: relative;
-  left: 20%;
   background-color: #161618;
   height: 100vh;
   overflow: auto;
@@ -123,10 +127,6 @@ body {
   justify-content: center;
   flex-wrap: nowrap;
 }
-
-/* .janela .img-pequeno img {
-  
-} */
 
 /* CARDS */
 
@@ -168,5 +168,6 @@ body {
 .grafico-idade {
   background-color: #611309;
   width: 600px;
-  height: 400px;
+  height: 300px;
+  margin-left: 20px;
 }

@@ -21,24 +21,20 @@ GROUP BY
     return database.executar(instrucaoSql);
 }
 
-module.exports = {
-    graficoIdade
+function buscarAnimais() {
+    var instrucaoSql = `
+        SELECT
+            count(CASE WHEN animal = 'coruja' THEN 1 ELSE NULL END) AS corujas,
+            count(CASE WHEN animal = 'gato' THEN 1 ELSE NULL END) AS gatos,
+            count(CASE WHEN animal = 'sapo' THEN 1 ELSE NULL END) AS sapos
+        FROM usuario;
+    `;
 
-}
-
-function graficoAnimal(limite_linhas) {
-
-    var instrucaoSql = `SELECT u.nome AS 'Nome',
-		r.dt_realizado AS 'Data Feito',
-        r.resultado AS 'Resultado do Quiz'
-        FROM usuario AS u JOIN resultado AS r
-        ON u.id_usuario = r.fk_usuario;`;
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-module.exports = {
-    graficoAnimal
 
+module.exports = {
+    graficoIdade,
+    buscarAnimais
 }
