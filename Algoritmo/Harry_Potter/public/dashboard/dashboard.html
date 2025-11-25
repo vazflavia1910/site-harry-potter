@@ -61,10 +61,13 @@
 
                 <div class="kpi-img">
                     <img src="../assets/chapeu.png">
+                    <div id="kpiAnimal"></div>
                 </div>
 
                 <div class="kpi-img">
                     <img src="../assets/coruja.png">
+                    <div id="kpiPontos"></div>
+                    
                 </div>
             </div>
 
@@ -93,7 +96,34 @@
     function exibirDashboardDoUsuario() {
         const idUsuario = sessionStorage.ID_USUARIO;
 
+
+        exibirkpi()
         obterDadosGrafico();
+    }
+
+    function exibirkpi(){
+        const idUsuario2 = sessionStorage.ID_USUARIO;
+
+        fetch("/grafico/buscarpontos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuario2,
+            }),
+        }).then(function (response) {
+            if(response.ok) {
+                response.json().then((json) => {
+                    if(json && json.length > 0 && json[0].animal != undefined){
+                        kpiPontos.innerHTML = json[0].animal
+                    }else{
+                        kpiPontos.innerHTML = 'Sem dados'
+                    }
+                })
+            }
+        })
+        
     }
 
     function obterDadosGrafico() {

@@ -22,6 +22,8 @@ GROUP BY
 }
 
 function buscarAnimais() {
+
+
     var instrucaoSql = `
         SELECT
             count(CASE WHEN animal = 'coruja' THEN 1 ELSE NULL END) AS corujas,
@@ -33,8 +35,19 @@ function buscarAnimais() {
     return database.executar(instrucaoSql);
 }
 
+function buscarpontos(id_usuario) {
+
+
+    var instrucaoSql = `
+    select animal from usuario
+	where id_usuario = ${id_usuario}`;
+
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
     graficoIdade,
-    buscarAnimais
+    buscarAnimais,
+    buscarpontos
 }

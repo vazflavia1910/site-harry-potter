@@ -12,4 +12,8 @@ router.get('/buscarAnimais', function (req, res) {
     graficoController.buscarAnimais(req, res);
 })
 
+router.post('/buscarpontos', function (req, res) {
+    graficoController.buscarpontos(req, res);
+})
+
 module.exports = router;
