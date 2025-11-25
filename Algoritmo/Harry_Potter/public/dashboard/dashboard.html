@@ -98,10 +98,6 @@
 
     function obterDadosGrafico() {
 
-        // if (proximaAtualizacao != undefined) {
-        //     clearTimeout(proximaAtualizacao);
-        // }
-
         // distribuição de idade
         fetch(`/grafico/graficoIdade`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -175,10 +171,10 @@
                 label: 'Total de Usuário',
                 data: valores,
                 backgroundColor: [
-                    '#36A2EB',
-                    'FF6384',
-                    '#FFCD56',
-                    '#4BC0C0'
+                    '#2A623D',
+                    '#AE0001',
+                    '#FFDB00',
+                    '#0E1A40'
                 ],
                 fill: true,
                 borderColor: 'rgb(75, 192, 192)',
@@ -218,9 +214,9 @@
                         label: 'Contagem de Animais',
                         data: dados,
                         backgroundColor: [
-                            '#36A2EB',
-                            'FF6384',
-                            '#FFCD56',
+                            '#2A623D',
+                            '#0E1A40',
+                            '#FFDB00',
                             // '#4BC0C0'
                         ],
                         fill: true,

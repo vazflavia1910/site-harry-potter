@@ -8,25 +8,12 @@ body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* .label-captura {
-  display: flex;
-  justify-content: center;
-} */
-
-/* pagina graficos */
-
-/* .leader-left .dash-header {
-  background-color: #212124;
-} */
-
-
 /* DASHBOARD */
 .bruxo {
     display: flex;
     text-align: center;
     flex-direction: column;
     gap: 10px;
-    /* position: fixed; */
     top: 0;
     left: 0;
     z-index: 999;
@@ -166,8 +153,16 @@ body {
 }
 
 .grafico-idade {
-  background-color: #611309;
+  background-color: #000000;
   width: 600px;
   height: 300px;
   margin-left: 20px;
+}
+
+.grafico-animais {
+  background-color: #000000;
+  width: 600px;
+  height: 300px;
+  margin-left: 20px;
+  margin-top: 20px;
 }

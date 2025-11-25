@@ -10,9 +10,22 @@ body {
     padding: 0;
 }
 
+.quiz-feitico {
+    flex-grow: 1; /* elemento filho flexivel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 .container-pai {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
 }
 
 /* Container geral */
@@ -38,7 +51,8 @@ body {
     background-color: #5a2d80;
 }
 
-#pontuacao, #jogo {
+#pontuacao,
+#jogo {
     background: rgba(20, 12, 31, 0.8);
     border: 2px solid #c6a56c;
     box-shadow: 0 0 15px #ad8b4b;
@@ -94,6 +108,7 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
 #botoes button {
     background: #3e275c;
     color: #f3e1c8;
@@ -113,8 +128,8 @@ body {
 #jogo {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    width: 600px; 
+    align-items: center;
+    width: 600px;
 }
 
 #pontuacao {
