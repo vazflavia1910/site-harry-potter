@@ -35,7 +35,7 @@ function buscarAnimais() {
     return database.executar(instrucaoSql);
 }
 
-function buscarpontos(id_usuario) {
+function buscarAnimal(id_usuario) {
 
 
     var instrucaoSql = `
@@ -45,9 +45,23 @@ function buscarpontos(id_usuario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarPontos(id_usuario) {
+
+
+    var instrucaoSql = `
+    select 
+		r.resultado 
+        from resultado r join usuario u
+        on r.fk_usuario = u.id_usuario
+        where u.id_usuario = ${id_usuario};`;
+
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
     graficoIdade,
     buscarAnimais,
-    buscarpontos
+    buscarAnimal,
+    buscarPontos
 }

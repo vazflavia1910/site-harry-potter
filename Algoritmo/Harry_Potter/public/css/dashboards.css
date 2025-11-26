@@ -166,3 +166,15 @@ body {
   margin-left: 20px;
   margin-top: 20px;
 }
+
+.kpi{
+  display: flex;
+}
+
+.kpi-img {
+  display: flex;
+  justify-content: center;
+  color: #EEE1FF;
+  font-size: 20px;
+  text-shadow: 2px 3px 2px #000;
+}
